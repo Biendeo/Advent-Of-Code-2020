@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AdventOfCode": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\Programming\\C#\\Advent-Of-Code-2020\\AdventOfCode"
+    }
+  }
+}
