@@ -13,19 +13,12 @@ namespace AdventOfCodeLib.Day02 {
 
 		public PasswordPolicy(string input) {
 			string[] passSplit = input.Split(':');
-			Password = passSplit[1].Substring(1);
+			Password = passSplit[1][1..];
 			string[] letterSplit = passSplit[0].Split(' ');
 			Letter = letterSplit[1][0];
 			string[] numberSplit = letterSplit[0].Split('-');
 			AtLeast = int.Parse(numberSplit[0]);
 			AtMost = int.Parse(numberSplit[1]);
-		}
-
-		public PasswordPolicy(int atLeast, int atMost, char letter, string password) {
-			AtLeast = atLeast;
-			AtMost = atMost;
-			Letter = letter;
-			Password = password;
 		}
 
 		public bool IsValidPartOne {
