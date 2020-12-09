@@ -9,28 +9,22 @@ namespace AdventOfCodeLib.Day09.Part2 {
 		public static long Solve(string[] input, int preambleLength) {
 			long invalidNumber = Part1.Solution.Solve(input, preambleLength);
 			long[] convertedInput = input.Where(s => s.Length > 0).Select(s => long.Parse(s)).ToArray();
-			int startIndex = -1;
-			int endIndex = -1;
-			bool found = false;
-			while (!found) {
-				++startIndex;
+			for (int startIndex = 0; startIndex < convertedInput.Length; ++startIndex) {
 				long sum = 0;
-				endIndex = startIndex - 1;
-				while (sum < invalidNumber) {
+				long min = long.MaxValue;
+				long max = long.MinValue;
+				long endIndex = startIndex - 1;
+				while (sum < invalidNumber && endIndex < convertedInput.Length) {
 					++endIndex;
 					sum += convertedInput[endIndex];
+					min = Math.Min(min, convertedInput[endIndex]);
+					max = Math.Max(max, convertedInput[endIndex]);
 				}
 				if (sum == invalidNumber) {
-					found = true;
+					return min + max;
 				}
 			}
-			long min = long.MaxValue;
-			long max = long.MinValue;
-			foreach (long x in convertedInput[startIndex..(endIndex + 1)]) {
-				min = Math.Min(min, x);
-				max = Math.Max(max, x);
-			}
-			return min + max;
+			return -1;
 		}
 	}
 }
