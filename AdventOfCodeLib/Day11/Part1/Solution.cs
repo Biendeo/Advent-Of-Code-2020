@@ -15,7 +15,7 @@ namespace AdventOfCodeLib.Day11.Part1 {
 				++rounds;
 				numberOfChanges = 0;
 				newGrid = grid.Clone2DList();
-				for (int y = 0; y < grid.Count; ++y) {
+				Enumerable.Range(0, grid.Count).AsParallel().ForAll(y => {
 					for (int x = 0; x < grid[y].Count; ++x) {
 						if (grid[y][x] != GridTile.Floor) {
 							int occupiedSeatsNeighbouring = 0;
@@ -37,7 +37,7 @@ namespace AdventOfCodeLib.Day11.Part1 {
 							}
 						}
 					}
-				}
+				});
 				grid = newGrid;
 			}
 
