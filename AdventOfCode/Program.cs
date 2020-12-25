@@ -61,3 +61,4 @@ RunSolution("Day 23 - Part 1", () => AdventOfCodeLib.Day23.Part1.Solution.SolveF
 RunSolution("Day 23 - Part 2", () => AdventOfCodeLib.Day23.Part2.Solution.SolveFromInputFile(Path.Combine("input", "23.txt")));
 RunSolution("Day 24 - Part 1", () => AdventOfCodeLib.Day24.Part1.Solution.SolveFromInputFile(Path.Combine("input", "24.txt")));
 RunSolution("Day 24 - Part 2", () => AdventOfCodeLib.Day24.Part2.Solution.SolveFromInputFile(Path.Combine("input", "24.txt")));
+RunSolution("Day 25 - Part 1", () => AdventOfCodeLib.Day25.Part1.Solution.SolveFromInputFile(Path.Combine("input", "25.txt")));
